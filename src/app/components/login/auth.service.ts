@@ -39,5 +39,9 @@ export class AuthService {
     }
   }
 
+  AuthUser(){
+    return this.userAuth;
+  }
+
 
 }
