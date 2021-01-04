@@ -1,0 +1,33 @@
+
+.card-back{
+  width: 40vw;
+  height: 80vh;
+  background-color: rgb(255, 254, 254, 0.95);
+  position:absolute;
+  display: flex;
+  flex-direction: row;
+  left: 5%;
+  top: 9%;
+
+}
+
+.card-login {
+  width: 500px;
+  background-color: white;
+	position: absolute;
+	right: 8%;
+	top: 25%
+}
+
+#password{
+  margin-top: -40px;
+}
+
+.cadastre-se {
+  padding-top: 10px;
+}
+
+
+  
+  
+  

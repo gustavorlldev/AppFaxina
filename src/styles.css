@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  background-image: url('assets/img/fundo-faxina.jpg'); background-repeat: repeat; background-size: cover;}
+
+.toolbar {
+    background-color:  #9aae04;
+    border: 1px solid #9aae04;
+}
+
+.lista-rede-sociais-icons {
+    float: right;
+}
+
+.lista-rede-sociais-icons li {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.lista-rede-sociais-icons li i {
+    font-size: 40px;
+}
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';

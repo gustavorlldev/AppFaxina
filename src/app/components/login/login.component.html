@@ -1,0 +1,31 @@
+
+
+<app-header *ngIf="showMenu"></app-header>
+<mat-card class="card-back mat-elevation-z4">
+  <div class="conteudo-login">
+    <mat-card-title>Bem vindo(a) ao AppFaxina</mat-card-title>
+  </div>
+</mat-card>
+
+<mat-card class="card-login mat-elevation-z4">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input [(ngModel)]="usuario.user" id="user" type="text" class="validate">
+      <label class="active" for="user">Usuario:</label>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="input-field col s12" id="password">
+      <input [(ngModel)]="usuario.password" id="pass" type="password" class="validate">
+      <label class="active" for="pass">Senha:</label>
+    </div>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action" (click)="login()">Login
+    <i class="material-icons right">send</i>
+  </button>
+  <br>
+  <button mat-button (click)="openDialog()">Open dialog</button>
+
+</mat-card>
