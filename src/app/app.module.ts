@@ -18,12 +18,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import {
   MatTabsModule,
   MatCheckboxModule,
   MatIconModule
 } from '@angular/material';
+import { NavComponent } from './components/nav/nav.component';
 
 
 
@@ -35,6 +38,7 @@ import {
     LoginComponent,
     HeaderComponent,
     HomeComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import {
     MatDialogModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
