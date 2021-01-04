@@ -19,6 +19,13 @@ import { HomeComponent } from './components/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import {
+  MatTabsModule,
+  MatCheckboxModule,
+  MatIconModule
+} from '@angular/material';
+
+
 
 
 
@@ -42,7 +49,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatCheckboxModule,
+    MatIconModule
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
