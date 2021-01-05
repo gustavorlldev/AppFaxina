@@ -5,13 +5,22 @@
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
             <form action="">
+            
+                <div class="container text-center">
+                    <ngx-dropzone (change)="onSelect($event)" [multiple] = "false">
+                        <ngx-dropzone-label>Inserir Foto</ngx-dropzone-label>
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview>
+                    </ngx-dropzone>
+                </div>
 
               <mat-form-field>
                 <input matInput placeholder="Primeiro Nome" required name="name" >
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Sobrenome" type="password" requiredminlength="6" name="lastname">
+                <input matInput placeholder="Sobrenome" required name="lastname">
               </mat-form-field> 
 
               <mat-form-field>
@@ -37,7 +46,7 @@
 
               <mat-form-field>
                 <mat-label>Whatsapp</mat-label>
-                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" required name="Whatsapp" >
+                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" required name="Whatsapp">
               </mat-form-field>
 
               <button mat-raised-button color="primary" class="complete-button">
