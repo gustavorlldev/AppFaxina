@@ -16,10 +16,6 @@ mat-toolbar {
   width: 200px;
 }
 
-.nav-list {
-  width: 200px;
-}
-
 .nav-list i {
   padding-right: 10px;
 }
@@ -32,10 +28,6 @@ mat-toolbar {
 
 .button-logout {
 margin-left: 20px;
-}
-
-.sidenav{
-  width:200px;
 }
 
 @media screen and (min-width: 960px) {

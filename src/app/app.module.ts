@@ -1,3 +1,4 @@
+import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule }from '@angular/fire/firestore';
@@ -23,7 +24,8 @@ import { ContentComponent } from './components/content/content.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    ProfileComponent
     ],
   imports: [
     BrowserModule,
