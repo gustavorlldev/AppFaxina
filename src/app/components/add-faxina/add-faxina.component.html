@@ -1,0 +1,16 @@
+<p>add-faxina works!</p>
+
+titulo: <input [(ngModel)]="novaFaxina.titulo"  type="text"> <br><br>
+descricao: <input [(ngModel)]="novaFaxina.descricao"  type="text"> <br><br>
+end: <input [(ngModel)]="novaFaxina.end"  type="text">  <br><br>
+contato: <input [(ngModel)]="novaFaxina.contato"  type="text"> <br><br>
+tamanhoCasa: <input [(ngModel)]="novaFaxina.tamanhoCasa"  type="text"> <br><br>
+dataFaxina: <input [(ngModel)]="novaFaxina.dataFaxina"  type="text"> <br><br>
+<button (click)="adicionarFaxina()"> Nova Faxina </button>
+<br><br>
+
+<ul *ngFor="let item of listaDeFaxina; let i= index">
+  <li>{{item.titulo}}</li>
+</ul>
+
+{{novaFaxina | json}}

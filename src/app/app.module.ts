@@ -1,6 +1,6 @@
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule }from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
+import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
+
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { ContentComponent } from './components/content/content.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    AddFaxinaComponent
     ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { ContentComponent } from './components/content/content.component';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     MaterialModule,
-    
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
