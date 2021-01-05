@@ -3,6 +3,31 @@ mat-toolbar {
   z-index: 0;
 }
 
+.content {
+  padding: 16px;
+  background-color: white;
+}
+
+.sidenav-button a {
+  text-decoration: none;
+}
+
+.sidenav-button {
+  width: 200px;
+}
+
+.nav-list {
+  width: 200px;
+}
+
+.button-logout {
+margin-left: 20px;
+}
+
+.sidenav{
+  width:200px;
+}
+
 @media screen and (min-width: 960px) {
   mat-toolbar {
      z-index: 50;
