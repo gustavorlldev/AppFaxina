@@ -20,6 +20,16 @@ mat-toolbar {
   width: 200px;
 }
 
+.nav-list i {
+  padding-right: 10px;
+}
+
+.nav-list a {
+  
+  align-items: center;
+  text-decoration: none;
+}
+
 .button-logout {
 margin-left: 20px;
 }
