@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/nav/nav.component';
+import { ContentComponent } from './components/content/content.component';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { NavComponent } from './components/nav/nav.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    NavComponent,
-  ],
+    ContentComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +36,7 @@ import { NavComponent } from './components/nav/nav.component';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

@@ -1,3 +1,4 @@
+import { AuthService } from './../login/auth.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { VERSION, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   layoutGap = '64';
   fixedInViewport = true;
 
-  public constructor(private bpo: BreakpointObserver) {}
+  public constructor(private bpo: BreakpointObserver, authService: AuthService) {}
 
   public ngOnInit(): void {
     const breakpoints = Object.keys(Breakpoints).map(key => Breakpoints[key])
@@ -34,6 +35,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  
   private determineSidenavMode(): void {
     if (
         this.isExtraSmallDevice() ||
