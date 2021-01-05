@@ -1,0 +1,52 @@
+<div class="page-background">
+    <mat-card class="">
+      <mat-card-title style="text-align:center;">Finalizar Cadastro</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Dados Pessoais">
+          <mat-card-content>
+            <form action="">
+
+              <mat-form-field>
+                <input matInput placeholder="Primeiro Nome" required name="name" >
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Sobrenome" type="password" requiredminlength="6" name="lastname">
+              </mat-form-field> 
+
+              <mat-form-field>
+                <input matInput placeholder="E-mail" required name="email" >
+              </mat-form-field>
+              
+              <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                    <mat-select required>
+                        <mat-option value="option">Masculino</mat-option>
+                        <mat-option value="option">Feminino</mat-option>
+                    </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput type="number" placeholder="Idade" required name="age" >
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>CPF</mat-label>
+                <input matInput placeholder="000.000.000-00" required name="Cpf" >
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Whatsapp</mat-label>
+                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" required name="Whatsapp" >
+              </mat-form-field>
+
+              <button mat-raised-button color="primary" class="complete-button">
+                Completar Cadastro
+              </button>
+
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>

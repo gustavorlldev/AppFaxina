@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 const routes: Routes = [
@@ -12,7 +14,8 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'cadastrar', component: AddFaxinaComponent},
-
+  {path: 'home', component: HomeComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 

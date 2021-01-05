@@ -10,22 +10,25 @@ mat-toolbar {
 
 .sidenav-button a {
   text-decoration: none;
+  color: black;
 }
 
 .sidenav-button {
   width: 200px;
 }
 
-.nav-list {
-  width: 200px;
+.nav-list i {
+  padding-top: 3px;
+  padding-right: 10px;
+}
+
+.nav-list a {
+  align-items: center;
+  text-decoration: none;
 }
 
 .button-logout {
 margin-left: 20px;
-}
-
-.sidenav{
-  width:200px;
 }
 
 @media screen and (min-width: 960px) {

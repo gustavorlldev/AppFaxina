@@ -1,3 +1,4 @@
+import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -26,8 +27,8 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
     HeaderComponent,
     HomeComponent,
     ContentComponent,
-    AddFaxinaComponent
-    ],
+    AddFaxinaComponent,
+    ProfileComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
