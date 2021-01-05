@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="add-faxineira.component.css">
+        <title>Faxineira</title>
+    </head>
+    <body>
+        <div>
+            <h1>Anuncio de serviço de faxineira</h1>
+            <input type='text' [(ngModel)]='novaFaxineira.titulo'></input><br><br>
+            <input type='text' [(ngModel)]='novaFaxineira.descricao'></input><br><br>
+            <input type='text' [(ngModel)]='novaFaxineira.contato'></input><br><br>
+            <button (click)="adicionarFaxineira()">Anunciar serviço</button><br><br>
+
+            <ul *ngFor="let item of listaFaxineira; let i= index">
+                <li>{{ item.titulo }}</li>
+            </ul>
+
+            {{novaFaxineira | json}}
+
+        </div>
+        <p>add-faxineira works!</p>    
+    </body>
+</html>
