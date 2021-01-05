@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+import { TransactionComponent } from './components/transaction/transaction.component';
+>>>>>>> Stashed changes
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule }from '@angular/fire/firestore';
@@ -23,7 +27,12 @@ import { ContentComponent } from './components/content/content.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
+<<<<<<< Updated upstream
     ContentComponent
+=======
+    ContentComponent,
+    TransactionComponent
+>>>>>>> Stashed changes
     ],
   imports: [
     BrowserModule,

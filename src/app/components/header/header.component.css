@@ -20,6 +20,7 @@ mat-toolbar {
   width: 200px;
 }
 
+<<<<<<< Updated upstream
 .nav-list i {
   padding-right: 10px;
 }
@@ -30,6 +31,8 @@ mat-toolbar {
   text-decoration: none;
 }
 
+=======
+>>>>>>> Stashed changes
 .button-logout {
 margin-left: 20px;
 }
