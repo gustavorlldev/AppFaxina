@@ -1,16 +1,20 @@
 <div class="list-services">
     <mat-tab-group animationDuration="5ms">
         <mat-tab label="Faxineiras">
-            <div class="ordenation">
-                <button mat-raised-button color="primary">Criar Anúncio</button> 
-                <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
-                    <datalist id="sort-list">
-                            <option value="Data recente" onclick="test()">
-                            <option value="Data antiga">
-                            <option value="Preço menor">
-                            <option value="Preço maior">
-                    </datalist>
-                </div> 
+                <div class="container">
+                    <div id="button-add">
+                        <button mat-raised-button color="primary">Criar Anúncio</button>
+                    </div>
+                    <div id="input-list">
+                        <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
+                        <datalist id="sort-list">
+                                <option value="Data recente" onclick="test()">
+                                <option value="Data antiga">
+                                <option value="Preço menor">
+                                <option value="Preço maior">
+                        </datalist>
+                    </div>   
+                </div>
             <ul>
                 <li>
                     <a href="http://google.com">
@@ -44,20 +48,23 @@
                     </a>
                     <h1></h1>
                 </li>
-            </ul>
-            
+            </ul>   
         </mat-tab>
         <mat-tab label="Serviços">
-            <div class="ordenation">
-            <button mat-raised-button color="primary">Criar Anúncio</button> 
-            <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
-                <datalist id="sort-list">
-                        <option value="Data recente" onclick="test()">
-                        <option value="Data antiga">
-                        <option value="Preço menor">
-                        <option value="Preço maior">
-                </datalist>
-            </div>         
+            <div class="container">
+                <div id="button-add">
+                    <button mat-raised-button color="primary">Criar Anúncio</button>
+                </div>
+                <div id="input-list">
+                    <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
+                    <datalist id="sort-list">
+                            <option value="Data recente" onclick="test()">
+                            <option value="Data antiga">
+                            <option value="Preço menor">
+                            <option value="Preço maior">
+                    </datalist>
+                </div>   
+            </div>
             <ul>
                 <li>
                     <a href="http://google.com">
