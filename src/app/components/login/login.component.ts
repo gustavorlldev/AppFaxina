@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class LoginComponent implements OnInit {
 
-  private usuario: Usuario = new Usuario();
+  public usuario: Usuario = new Usuario();
 
   constructor(private authService: AuthService, public dialog: MatDialog) { }
 
@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.usuario);
   }
 }
+
+
 
 
 

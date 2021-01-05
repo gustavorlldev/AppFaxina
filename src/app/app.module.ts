@@ -1,24 +1,21 @@
-import { AuthService } from './components/login/auth.service';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule }from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
-
-
+import { ContentComponent } from './components/content/content.component';
 
 
 @NgModule({
@@ -27,25 +24,25 @@ import {MatDialogModule} from '@angular/material/dialog';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-  ],
+    ContentComponent,
+    TransactionComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
-    MatCardModule,
-    MatToolbarModule,
     FormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatDialogModule
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
+    MaterialModule,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

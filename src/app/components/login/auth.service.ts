@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   
-
   private userAuth: boolean = false;
   
     showMenuEmitter = new EventEmitter<boolean>();
@@ -33,11 +32,14 @@ export class AuthService {
 
       this.userAuth = false;
 
-      this.snackBarService.openSnackBar('Usuario não autenticado')
+      this.snackBarService.openSnackBar('Credenciais inválidas')
 
       this.showMenuEmitter.emit(false);
     }
   }
 
+  AuthUser(){
+    return this.userAuth;
+  }
 
 }
