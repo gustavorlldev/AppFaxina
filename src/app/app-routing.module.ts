@@ -5,13 +5,14 @@ import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
 
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'nav', component: NavComponent},
+  {path: 'nav', component: NavComponent}
 
 ];
 
