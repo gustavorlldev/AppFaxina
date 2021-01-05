@@ -10,7 +10,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 const routes: Routes = [
 
   {path: '', component: LoginComponent},
+<<<<<<< Updated upstream
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]}
+=======
+  {path: 'home', component: HomeComponent},
+  //{path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+>>>>>>> Stashed changes
 ];
 
 
