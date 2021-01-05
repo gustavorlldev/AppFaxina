@@ -13,6 +13,7 @@ export class AuthService {
   private userAuth: boolean = false;
   
     showMenuEmitter = new EventEmitter<boolean>();
+ 
   constructor(private router: Router, private snackBarService: SnackbarService) {
   
    }
@@ -41,5 +42,6 @@ export class AuthService {
   AuthUser(){
     return this.userAuth;
   }
+
 
 }

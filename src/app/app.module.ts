@@ -1,3 +1,5 @@
+import { LogoutComponent } from './components/login/logoutComponent';
+import { TransactionComponent } from './components/transaction/transaction.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -25,7 +27,9 @@ import { ContentComponent } from './components/content/content.component';
     HeaderComponent,
     HomeComponent,
     ContentComponent,
-    ProfileComponent
+    ProfileComponent,
+    TransactionComponent,
+    LogoutComponent
     ],
   imports: [
     BrowserModule,
