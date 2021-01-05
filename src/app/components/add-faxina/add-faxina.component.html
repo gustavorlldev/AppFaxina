@@ -1,16 +1,53 @@
-<p>add-faxina works!</p>
+<div >
 
-titulo: <input [(ngModel)]="novaFaxina.titulo"  type="text"> <br><br>
-descricao: <input [(ngModel)]="novaFaxina.descricao"  type="text"> <br><br>
-end: <input [(ngModel)]="novaFaxina.end"  type="text">  <br><br>
-contato: <input [(ngModel)]="novaFaxina.contato"  type="text"> <br><br>
-tamanhoCasa: <input [(ngModel)]="novaFaxina.tamanhoCasa"  type="text"> <br><br>
-dataFaxina: <input [(ngModel)]="novaFaxina.dataFaxina"  type="text"> <br><br>
-<button (click)="adicionarFaxina()"> Nova Faxina </button>
-<br><br>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput [(ngModel)]="novaFaxina.titulo"  type="text">
+  </mat-form-field>
+  <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descricao</mat-label>
+      <input matInput [(ngModel)]="novaFaxina.descricao"  type="text">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Endereço</mat-label>
+      <input matInput [(ngModel)]="novaFaxina.end"  type="text">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Contato</mat-label>
+      <input matInput [(ngModel)]="novaFaxina.contato"  type="text" placeholder="(xx) x xxxx-xxxx">
+    </mat-form-field>
+    <br>
+
+    <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Tamanho da Casa (em m2)</mat-label>
+      <input matInput [(ngModel)]="novaFaxina.tamanhoCasa"  type="text">
+    </mat-form-field>
+  </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Data da Faxina</mat-label>
+        <input matInput [matDatepicker]="dp3" disabled [(ngModel)]="novaFaxina.dataFaxina"  type="text">
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+<button mat-stroked-button color="primary" (click)="adicionarFaxina()"> Nova Faxina </button>
 <ul *ngFor="let item of listaDeFaxina; let i= index">
   <li>{{item.titulo}}</li>
 </ul>
+<br><br>
+</div>
+
+
 
 {{novaFaxina | json}}
