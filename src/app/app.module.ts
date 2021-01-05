@@ -1,4 +1,3 @@
-import { LogoutComponent } from './components/login/logoutComponent';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
@@ -29,7 +28,7 @@ import { ContentComponent } from './components/content/content.component';
     ContentComponent,
     ProfileComponent,
     TransactionComponent,
-    LogoutComponent
+
     ],
   imports: [
     BrowserModule,

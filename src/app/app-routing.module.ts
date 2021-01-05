@@ -6,7 +6,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
-import { LogoutComponent } from './components/login/logoutComponent';
 
 
 const routes: Routes = [
@@ -14,8 +13,7 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'transaction', component: TransactionComponent},
-  { path: 'logout', component: LogoutComponent}
+  {path: 'transaction', component: TransactionComponent}
 ];
 
 
