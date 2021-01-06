@@ -13,7 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 const routes: Routes = [
 
   {path: '', component: LoginComponent},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent},
   {path: 'cadastrar', component: AddFaxinaComponent},
   {path: 'home', component: HomeComponent},
   {path: 'profile', component: ProfileComponent},
