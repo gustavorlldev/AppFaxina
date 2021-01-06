@@ -2,13 +2,19 @@
   <button mat-icon-button (click)="opened = !opened">
     <mat-icon>menu</mat-icon>
   </button> App Faxina
-  <button class="button-logout" mat-raised-button color="accent">Sair</button>
+  <button class="button-logout" (click)="logout()" mat-raised-button color="accent">Sair</button>
 </mat-toolbar>
 <mat-sidenav-container class="main-sidenav-container" (backdropClick)="opened = !opened">
   <mat-sidenav class="sidenav" [mode]="mode" [opened]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
     <button class="sidenav-button" mat-button (click)="opened = !opened">
       <mat-sidenav-list class="nav-list">
-        <a [routerLink]="['/logout']" mat-list-item routerLink="/products"><i class="material-icons">home</i>Inicio</a>
+        <a mat-list-item routerLink="/products"><i class="material-icons">home</i>Inicio</a>
+        <a mat-list-item routerLink="/products"><i class="material-icons">account_circle</i>Perfil</a>
+        <a mat-list-item routerLink="/products"><i class="material-icons">playlist_add_check</i>Cadastrar</a>
+        <a mat-list-item routerLink="/products"><i class="material-icons">search</i>Buscar serviços</a>
+        
+
+
       </mat-sidenav-list>
 
     </button>

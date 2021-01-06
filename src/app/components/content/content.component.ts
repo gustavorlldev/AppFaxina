@@ -13,7 +13,7 @@ export class ContentComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  
+
   constructor() { }
 
   ngOnInit() {
