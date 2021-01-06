@@ -29,4 +29,12 @@ input {
 color: #303f9f;
 }
 
+/* otimização para utilizar o plano de fundo com a foto da página de login */
+.background {
+    background-image: url('./assets/img/fundo-faxina.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';

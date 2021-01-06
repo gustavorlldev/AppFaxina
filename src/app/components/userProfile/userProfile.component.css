@@ -1,0 +1,36 @@
+.background {
+    height: 100vh;
+}
+.profile-div {
+    
+    padding-top: 1rem;
+}
+.profile-card {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+} 
+
+.profile-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
+.mat-card-header-text {
+    margin: auto 10px;
+}
+.listitem span {
+    color: rgb(117, 117, 117);
+    padding-right: 10px;
+}
+.listitem mat-list-item {
+    font-size: 15px;
+    align-items: center;
+}
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: block;
+    height: 30px;
+}
+
+

@@ -7,8 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-
+import { UserProfileComponent } from './components/userProfile/userProfile.component';
 
 const routes: Routes = [
 
@@ -17,11 +16,10 @@ const routes: Routes = [
   {path: 'cadastrar', component: AddFaxinaComponent},
   {path: 'home', component: HomeComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'transaction', component: TransactionComponent}
+  {path: 'transaction', component: TransactionComponent},
+  {path: 'userprofile', component: UserProfileComponent}
 
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
