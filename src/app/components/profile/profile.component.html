@@ -4,18 +4,26 @@
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
-            <form action="">
+            <form action=""  >
+
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url"> 
+                    <div class="hover-text">Escolher foto</div>
+                    <div class="background"></div>
+                </label>
+                <br>
+                <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
 
               <mat-form-field>
                 <input matInput placeholder="Primeiro Nome" required name="name" >
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Sobrenome" type="password" requiredminlength="6" name="lastname">
+                <input matInput placeholder="Sobrenome" required name="lastname">
               </mat-form-field> 
 
               <mat-form-field>
-                <input matInput placeholder="E-mail" required name="email" >
+                <input matInput type="email" placeholder="E-mail" required name="email" [(ngModel)]="email" >
               </mat-form-field>
               
               <mat-form-field>
@@ -32,7 +40,10 @@
 
               <mat-form-field>
                 <mat-label>CPF</mat-label>
-                <input matInput placeholder="000.000.000-00" required name="Cpf" >
+                <input matInput placeholder="000.000.000-00" required formControlName="cpf" >
+                <div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
+                    O CPF não é válido.
+                  </div>
               </mat-form-field>
 
               <mat-form-field>
