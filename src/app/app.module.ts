@@ -31,7 +31,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone'
     TransactionComponent,
     AddFaxinaComponent,
     ProfileComponent 
-
     ],
  
 
