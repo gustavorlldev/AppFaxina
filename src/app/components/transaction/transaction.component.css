@@ -1,7 +1,8 @@
 #img-list {
   border:3px solid #7080e9;
   border-radius: 5px;
-  
+  max-width: 150px;
+  max-height: 150px;
 }
 
 #info-list {
@@ -63,11 +64,10 @@
   border-color: #7080e9;
   border-radius: 5px;
   background: url('src\assets\img\card-bar.jpg');
-  background-size: cover;
+  background-size:cover;
   margin-left: 15px;
   margin-right: 15px;
-  width: 100%;
-  height: 100%;
+
 }
 
 .background-img {
