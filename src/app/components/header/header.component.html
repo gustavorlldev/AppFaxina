@@ -5,7 +5,7 @@
     <button class="button-logout" (click)="logout()" mat-raised-button color="accent">Sair</button>
 </mat-toolbar>
 <mat-sidenav-container class="main-sidenav-container" (backdropClick)="opened = !opened">
-    <mat-sidenav class="sidenav" [(mode)]="over" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
+    <mat-sidenav class="sidenav" [(mode)]="mode" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
         <button class="sidenav-button" mat-button (click)="opened = !opened">
       <mat-nav-list class="nav-list">
         
