@@ -21,36 +21,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
     font-size: 40px;
 }
 
-/*#list-services > .mat-tab-group, button {
-    margin-bottom: 48px;
-    background-color: white;
-    align-items: center;
-    
-}*/
-
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: white;
-    height: 3px;
-    border-color: #303f9f
-}
-  
-/*#list-services > .mat-tab-label, .mat-tab-link {
-    color: white;
-    background-color: #303f9f;
-    width: 300px;
-    border-color: #303f9f
-}
-*/
-
-.list-services > a {
-    color : #303f9f;
-    background-color: #303f9f;
-    border-color: #303f9f;
-    cursor: pointer;
-  }
-
 input {
     cursor: pointer;
+}
+
+.mat-tab-label-content {
+color: #303f9f;
 }
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
