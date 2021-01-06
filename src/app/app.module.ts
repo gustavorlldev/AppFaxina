@@ -18,8 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
-
-
+import { NgxDropzoneModule } from 'ngx-dropzone'
 
 @NgModule({
   declarations: [
@@ -48,6 +47,7 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     MaterialModule,
+    NgxDropzoneModule
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
