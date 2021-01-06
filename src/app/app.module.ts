@@ -32,7 +32,6 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
     TransactionComponent,
     AddFaxinaComponent,
     ProfileComponent 
-
     ],
  
 
