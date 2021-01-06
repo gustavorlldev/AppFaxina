@@ -1,6 +1,4 @@
-export class Usuario {
-    id:string;
-    user: string;
-    password: string;
-    email:string;
-}
+import { AbstractPessoaEntity } from "./pessoa-abstract-entity";
+
+export class Usuario extends AbstractPessoaEntity{}
+
