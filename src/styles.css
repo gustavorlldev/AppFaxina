@@ -25,4 +25,8 @@ input {
     cursor: pointer;
 }
 
+.mat-tab-label-content {
+color: #303f9f;
+}
+
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
