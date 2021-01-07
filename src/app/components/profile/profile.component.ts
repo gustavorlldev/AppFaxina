@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, InjectionToken } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { GenericValidator } from './cpfValidator';
 
@@ -14,13 +14,20 @@ export class ProfileComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  @Input()
-  email: string | boolean
-
   ngOnInit() {
     this.form = this.formBuilder.group({
       cpf: this.formBuilder.control({ value: null, disabled: false}, GenericValidator.isValidCpf())
     })
+  }
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+  inputs = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Campo obrigatório';
+    }
+    return this.email.hasError('email') ? 'E-mail inválido' : '';
   }
 
   url = '../../assets/img/user.png';
