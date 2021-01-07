@@ -19,7 +19,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
 import { UserProfileComponent } from './components/userprofile/userProfile.component';
-import { NgxDropzoneModule } from 'ngx-dropzone'
 
 @NgModule({
   declarations: [
@@ -47,9 +46,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone'
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    MaterialModule,
-    NgxDropzoneModule
-
+    MaterialModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
