@@ -21,4 +21,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
     font-size: 40px;
 }
 
+input {
+    cursor: pointer;
+}
+
+.mat-tab-label-content {
+color: #303f9f;
+}
+
+/* otimização para utilizar o plano de fundo com a foto da página de login */
+.background {
+    background-image: url('./assets/img/fundo-faxina.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';

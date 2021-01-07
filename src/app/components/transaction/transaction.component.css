@@ -1,0 +1,130 @@
+#img-list {
+  border:3px solid #7080e9;
+  border-radius: 5px;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+#info-list {
+  margin-left: 15px
+  
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.list-services {
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 40px;
+
+}
+
+.container-list {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 1.5px solid #7080e9;
+  padding: 10px 10px 10px 10px;
+  margin-left: -40px;
+}
+
+.background {
+  border: 1.5px;
+  border-color: #7080e9;
+  border-radius: 5px;
+  background: url('src\assets\img\card-bar.jpg');
+  background-size:cover;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+.background-img {
+  opacity: 0.2;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+a:hover {
+  color:  #303f9f;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-left: 170px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+}
+
+p {
+  margin-right: 1px;
+}
+
+p > b {
+  margin-left: 0px;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  display: table;
+}
+
+input {
+  height: 17px;
+  border: 1.5px solid #7080e9;
+  border-radius: 2px;
+  outline-color :#7080e9;
+  text-align: center;
+}
+
+input:hover, input::selection, input:active {
+  height: 17px;
+  border: 1.5px solid #7080e9;
+  border-radius: 2px;
+  outline-color :#7080e9;
+}
+
+::placeholder {
+  text-align: center;
+  color: #6b6b6b;
+  color: black;
+  font-size: 11px;
+}

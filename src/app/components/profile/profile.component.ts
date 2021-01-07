@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, InjectionToken } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Person } from '../../shared/person/person'
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { FormBuilder } from '@angular/forms';
+import { GenericValidator } from './cpfValidator';
 
 @Component({
   selector: 'app-profile',
@@ -10,20 +12,21 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class ProfileComponent implements OnInit {
 
-  formPerson: FormGroup;
+  form: FormGroup;
 
-  createForm(person: Person) {
-    this.formPerson = new FormGroup({
-      name: new FormControl(person.name),
-      lastName: new FormControl(person.lastName),
-      email: new FormControl(person.email),
-      gender: new FormControl(person.gender),
-      cpf: new FormControl(person.cpf),
-      contact: new FormControl(person.contact),
-      image: new FormControl(person.image)
+  constructor(private formBuilder: FormBuilder) {}
+
+
+  @Input()
+  email: string | boolean
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      cpf: this.formBuilder.control({ value: null, disabled: false}, GenericValidator.isValidCpf())
     })
   }
 
+<<<<<<< HEAD
   files: File[] = [];
 
 	onSelect(event) {
@@ -37,8 +40,22 @@ export class ProfileComponent implements OnInit {
 	}
   
   constructor() { }
+=======
+  url = '../../assets/img/profile-placeholder.png'
+>>>>>>> main
 
-  ngOnInit() {
+  onSelectFile(event) {
+  
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (event) => { 
+          this.url = event.target.result as string;
+      }
+    }
   }
+ 
 
 }

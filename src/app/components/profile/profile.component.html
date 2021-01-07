@@ -1,9 +1,10 @@
 <div class="page-background">
-    <mat-card class="mat-elevation-z12">
+    <mat-card class="">
       <mat-card-title style="text-align:center;">Finalizar Cadastro</mat-card-title>
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
+<<<<<<< HEAD
             <form action="">
             
                 <div class="container text-center">
@@ -14,6 +15,17 @@
                         </ngx-dropzone-preview>
                     </ngx-dropzone>
                 </div>
+=======
+            <form action=""  >
+
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url"> 
+                    <div class="hover-text">Escolher foto</div>
+                    <div class="background"></div>
+                </label>
+                <br>
+                <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
+>>>>>>> main
 
               <mat-form-field>
                 <input matInput placeholder="Primeiro Nome" required name="name" >
@@ -24,7 +36,7 @@
               </mat-form-field> 
 
               <mat-form-field>
-                <input matInput placeholder="E-mail" required name="email" >
+                <input matInput type="email" placeholder="E-mail" required name="email" [(ngModel)]="email" >
               </mat-form-field>
               
               <mat-form-field>
@@ -39,9 +51,13 @@
                 <input matInput type="number" placeholder="Idade" required name="age" >
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field 
+              [formGroup]="form">
                 <mat-label>CPF</mat-label>
-                <input matInput placeholder="000.000.000-00" required name="Cpf" >
+                <input matInput placeholder="000.000.000-00" required formControlName="cpf" >
+                <div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
+                    O CPF não é válido.
+                  </div>
               </mat-form-field>
 
               <mat-form-field>

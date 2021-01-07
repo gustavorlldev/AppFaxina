@@ -1,19 +1,27 @@
 <mat-toolbar class="mat-elevation-z6" color="primary">
-  <button mat-icon-button (click)="opened = !opened">
+    <button mat-icon-button (click)="opened = !opened">
     <mat-icon>menu</mat-icon>
   </button> App Faxina
-  <button class="button-logout" mat-raised-button color="accent">Sair</button>
+    <button class="button-logout" (click)="logout()" mat-raised-button color="accent">Sair</button>
 </mat-toolbar>
 <mat-sidenav-container class="main-sidenav-container" (backdropClick)="opened = !opened">
-  <mat-sidenav class="sidenav" [mode]="mode" [opened]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
-    <button class="sidenav-button" mat-button (click)="opened = !opened">
-      <mat-sidenav-list class="nav-list">
-        <a [routerLink]="['/logout']" mat-list-item routerLink="/products"><i class="material-icons">home</i>Inicio</a>
-      </mat-sidenav-list>
+    <mat-sidenav class="sidenav" [(mode)]="mode" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
+        <button class="sidenav-button" mat-button (click)="opened = !opened">
+      <mat-nav-list class="nav-list">
+        
+          <a mat-list-item routerLink="/products"><i class="material-icons">home</i>Inicio</a>
+          <hr>
+          <a mat-list-item routerLink="/products"><i class="material-icons">account_circle</i>Perfil</a>
+          <hr>
+          <a mat-list-item routerLink="/products"><i class="material-icons">playlist_add_check</i>Cadastrar</a>
+          <hr>
+          <a mat-list-item routerLink="/products"><i class="material-icons">search</i>Buscar serviços</a>
+          <hr>
+      </mat-nav-list>
 
     </button>
-  </mat-sidenav>
-  <mat-sidenav-content class="content">
-    <app-content></app-content>
-  </mat-sidenav-content>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <app-content></app-content>
+    </mat-sidenav-content>
 </mat-sidenav-container>

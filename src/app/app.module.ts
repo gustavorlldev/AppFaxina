@@ -1,6 +1,8 @@
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule }from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +17,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
-
+import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
+import { UserProfileComponent } from './components/userprofile/userProfile.component';
+import { NgxDropzoneModule } from 'ngx-dropzone'
 
 @NgModule({
   declarations: [
@@ -23,8 +27,15 @@ import { ContentComponent } from './components/content/content.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    ProfileComponent,
+    TransactionComponent,
+    AddFaxinaComponent,
+    ProfileComponent,
+    UserProfileComponent
     ],
+ 
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +48,8 @@ import { ContentComponent } from './components/content/content.component';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     MaterialModule,
-    
+    NgxDropzoneModule
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
