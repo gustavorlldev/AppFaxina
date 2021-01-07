@@ -8,13 +8,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserProfileComponent } from './components/userProfile/userProfile.component';
+import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.component';
 
 const routes: Routes = [
 
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'cadastrar', component: AddFaxinaComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'cadastrarfaxineira', component: AddFaxineiraComponent},
+  // {path: 'home', component: HomeComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'transaction', component: TransactionComponent},
   {path: 'userprofile', component: UserProfileComponent}
