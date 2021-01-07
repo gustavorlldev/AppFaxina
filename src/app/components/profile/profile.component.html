@@ -38,7 +38,8 @@
                 <input matInput type="number" placeholder="Idade" required name="age" >
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field 
+              [formGroup]="form">
                 <mat-label>CPF</mat-label>
                 <input matInput placeholder="000.000.000-00" required formControlName="cpf" >
                 <div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
