@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, InjectionToken } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Person } from '../../shared/person/person'
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { FormBuilder } from '@angular/forms';
 import { GenericValidator } from './cpfValidator';
 
@@ -25,20 +23,19 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  url = '../../assets/img/profile-placeholder.png'
+  url = '../../assets/img/user.png';
 
- /* onSelectFile(event) {
+  onSelectFile(event) {
   
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event) => { 
-          this.url = event.target.result as string;
+      reader.onload = (event: Event) => { 
+          this.url = (<FileReader>event.target).result as string;
       }
     }
-  } */
+  } 
  
-
 }

@@ -75,6 +75,7 @@ img {
     pointer-events: none;
     border-radius: 50%;
     z-index: 1;
+    background-image: none;
   }
   .hoverable:hover .hover-text{
     display: block;

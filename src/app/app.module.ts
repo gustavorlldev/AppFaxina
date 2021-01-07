@@ -18,7 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
-import { UserProfileComponent } from './components/userprofile/userProfile.component';
+import { UserProfileComponent } from './components/userProfile/userProfile.component';
 import { NgxDropzoneModule } from 'ngx-dropzone'
 
 @NgModule({

@@ -5,7 +5,7 @@
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
             <form action=""  >
-
+                <div class="picture">
                 <label class="hoverable" for="fileInput">
                     <img [src]="url"> 
                     <div class="hover-text">Escolher foto</div>
@@ -13,7 +13,7 @@
                 </label>
                 <br>
                 <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
-
+            </div>
               <mat-form-field>
                 <input matInput placeholder="Primeiro Nome" required name="name" >
               </mat-form-field>
