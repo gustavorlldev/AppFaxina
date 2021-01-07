@@ -4,18 +4,6 @@
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
-<<<<<<< HEAD
-            <form action="">
-            
-                <div class="container text-center">
-                    <ngx-dropzone (change)="onSelect($event)" [multiple] = "false">
-                        <ngx-dropzone-label>Inserir Foto</ngx-dropzone-label>
-                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                        </ngx-dropzone-preview>
-                    </ngx-dropzone>
-                </div>
-=======
             <form action=""  >
 
                 <label class="hoverable" for="fileInput">
@@ -25,7 +13,6 @@
                 </label>
                 <br>
                 <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
->>>>>>> main
 
               <mat-form-field>
                 <input matInput placeholder="Primeiro Nome" required name="name" >

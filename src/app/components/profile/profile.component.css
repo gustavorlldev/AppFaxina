@@ -14,23 +14,14 @@
   
   mat-card { 
     width: 80%;
-<<<<<<< HEAD
-    height: 92%;
-    margin: 5vh auto;
-=======
     height: 90%;
     margin: 2vh auto;
->>>>>>> main
     border-radius: 8px;
   }
   
   mat-form-field{
     width: 40%;
-<<<<<<< HEAD
-    display: inline-flexbox;
-=======
     display: flexbox;
->>>>>>> main
     margin-left: 65px;
   }
 
@@ -47,9 +38,6 @@
   .container {
     max-width: 200px;
     margin: 0 auto;
-<<<<<<< HEAD
-}
-=======
 }
 
 img {
@@ -98,4 +86,3 @@ img {
   #fileInput{
     display: none;
   }
->>>>>>> main

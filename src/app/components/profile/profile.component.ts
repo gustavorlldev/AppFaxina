@@ -16,7 +16,6 @@ export class ProfileComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-
   @Input()
   email: string | boolean
 
@@ -26,25 +25,9 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-<<<<<<< HEAD
-  files: File[] = [];
-
-	onSelect(event) {
-		console.log(event);
-		this.files.push(...event.addedFiles);
-	}
-
-	onRemove(event) {
-		console.log(event);
-		this.files.splice(this.files.indexOf(event), 1);
-	}
-  
-  constructor() { }
-=======
   url = '../../assets/img/profile-placeholder.png'
->>>>>>> main
 
-  onSelectFile(event) {
+ /* onSelectFile(event) {
   
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -55,7 +38,7 @@ export class ProfileComponent implements OnInit {
           this.url = event.target.result as string;
       }
     }
-  }
+  } */
  
 
 }
