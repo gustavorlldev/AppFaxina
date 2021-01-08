@@ -33,16 +33,15 @@ export class ProfileComponent implements OnInit {
   url = '../../assets/img/user.png';
 
   onSelectFile(event) {
-  
+
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event: Event) => { 
+      reader.onload = (event: Event) => {
           this.url = (<FileReader>event.target).result as string;
       }
     }
   } 
- 
 }
