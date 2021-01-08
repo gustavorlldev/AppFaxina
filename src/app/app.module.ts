@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
 import { UserProfileComponent } from './components/userProfile/userProfile.component';
+import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UserProfileComponent } from './components/userProfile/userProfile.compo
     ProfileComponent,
     TransactionComponent,
     AddFaxinaComponent,
+    AddFaxineiraComponent,
     ProfileComponent,
     UserProfileComponent
     ],

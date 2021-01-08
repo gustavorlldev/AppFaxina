@@ -35,11 +35,9 @@ export class ProfileComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event) => { 
-          this.url = event.target.result as string;
+      reader.onload = (event: Event) => { 
+          this.url = (<FileReader>event.target).result as string;
       }
     }
   }
- 
-
 }
