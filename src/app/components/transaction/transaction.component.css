@@ -3,11 +3,15 @@
   border-radius: 5px;
   max-width: 150px;
   max-height: 150px;
+  margin-top: auto;
+  margin-bottom: auto;
+  box-shadow: 5px 5px 5px 1px rgb(136, 136, 136);
 }
 
 #info-list {
-  margin-left: 15px
-  
+  margin-left: 15px;
+  margin-right: 15px;
+
 }
 
 .example-label {
@@ -50,29 +54,33 @@
 
 }
 
-.container-list {
+.background-transaction {
+  background-image: url('src\assets\img\fundo-faxina-transaction.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
-  border: 1.5px solid #7080e9;
+  border: 3px solid #7080e9;
   padding: 10px 10px 10px 10px;
-  margin-left: -40px;
+  margin-right: 30px;
+  box-shadow: 5px 5px 5px 2px rgb(136, 136, 136);
+  word-wrap: break-word;
 }
 
-.background {
-  border: 1.5px;
-  border-color: #7080e9;
-  border-radius: 5px;
-  background: url('src\assets\img\card-bar.jpg');
-  background-size:cover;
-  margin-left: 15px;
-  margin-right: 15px;
+.card-info {
 
+  display: flex;
+  font-size: 16px;
+  word-wrap: break-word;
 }
 
-.background-img {
-  opacity: 0.2;
+p > label {
+  font-size: 15px;
+  font-weight: bold;
 }
+
 
 a {
   color: rgb(0, 0, 0);
@@ -128,3 +136,4 @@ input:hover, input::selection, input:active {
   color: black;
   font-size: 11px;
 }
+

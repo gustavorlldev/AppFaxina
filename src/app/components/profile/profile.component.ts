@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, InjectionToken } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Person } from '../../shared/person/person'
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { GenericValidator } from './cpfValidator';
 
@@ -16,26 +14,32 @@ export class ProfileComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-
-  @Input()
-  email: string | boolean
-
   ngOnInit() {
     this.form = this.formBuilder.group({
       cpf: this.formBuilder.control({ value: null, disabled: false}, GenericValidator.isValidCpf())
     })
   }
 
-  url = '../../assets/img/profile-placeholder.png'
+  email = new FormControl('', [Validators.required, Validators.email]);
+  inputs = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Campo obrigatório';
+    }
+    return this.email.hasError('email') ? 'E-mail inválido' : '';
+  }
+
+  url = '../../assets/img/user.png';
 
   onSelectFile(event) {
-  
+
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event: Event) => { 
+      reader.onload = (event: Event) => {
           this.url = (<FileReader>event.target).result as string;
       }
     }
