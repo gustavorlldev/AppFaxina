@@ -4,40 +4,62 @@
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
-            <form action="">
+            <form action=""  >
+
+              <div class="picture">
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url"> 
+                    <div class="hover-text">Escolher foto</div>
+                    <div class="background"></div>
+                </label>
+                <br>
+                <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
+              </div>
 
               <mat-form-field>
-                <input matInput placeholder="Primeiro Nome" required name="name" >
+                <input matInput placeholder="Primeiro Nome"[formControl]="inputs" >
+                <mat-error>Campo obrigatório</mat-error>
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Sobrenome" type="password" requiredminlength="6" name="lastname">
+                <input matInput placeholder="Sobrenome" [formControl]="inputs">
+                <mat-error>Campo obrigatório</mat-error>
               </mat-form-field> 
 
-              <mat-form-field>
-                <input matInput placeholder="E-mail" required name="email" >
-              </mat-form-field>
+                <mat-form-field >
+                  <mat-label>E-mail</mat-label>
+                  <input matInput placeholder="exemplo@exemplo.com" [formControl]="email" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            
               
               <mat-form-field>
                 <mat-label>Sexo</mat-label>
-                    <mat-select required>
+                    <mat-select [formControl]="inputs">
                         <mat-option value="option">Masculino</mat-option>
                         <mat-option value="option">Feminino</mat-option>
                     </mat-select>
+                    <mat-error>Campo obrigatório</mat-error>
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput type="number" placeholder="Idade" required name="age" >
+                <input matInput type="number" placeholder="Idade" [formControl]="inputs" name="age" >
+                <mat-error>Campo obrigatório</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field 
+              [formGroup]="form">
                 <mat-label>CPF</mat-label>
-                <input matInput placeholder="000.000.000-00" required name="Cpf" >
+                <input matInput placeholder="12345678910" required formControlName="cpf" >
+                <mat-error><div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
+                    O CPF não é válido.
+                  </div></mat-error>
               </mat-form-field>
 
               <mat-form-field>
                 <mat-label>Whatsapp</mat-label>
-                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" required name="Whatsapp" >
+                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" [formControl]="inputs" name="Whatsapp">
+                <mat-error>Campo obrigatório</mat-error>
               </mat-form-field>
 
               <button mat-raised-button color="primary" class="complete-button">

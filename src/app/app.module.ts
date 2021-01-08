@@ -18,8 +18,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
-
-
+import { UserProfileComponent } from './components/userProfile/userProfile.component';
+import { NgxDropzoneModule } from 'ngx-dropzone'
+import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,11 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
     ProfileComponent,
     TransactionComponent,
     AddFaxinaComponent,
-    ProfileComponent 
+    AddFaxineiraComponent,
+    ProfileComponent,
+    UserProfileComponent
     ],
- 
+
 
   imports: [
     BrowserModule,
@@ -46,8 +49,7 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    MaterialModule,
-
+    MaterialModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
