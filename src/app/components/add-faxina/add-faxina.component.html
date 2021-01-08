@@ -5,7 +5,7 @@
 
 <div class="login-page">
   <mat-card >
-    <mat-card-title style="text-align: center">Novo Serviço</mat-card-title>
+    <mat-card-title style="text-align: center">Nova Faxina</mat-card-title>
     <br />
 
     <mat-form-field appearance="fill">
@@ -44,7 +44,7 @@
 
 
       <mat-form-field appearance="fill">
-        <mat-label>Data do Serviço</mat-label>
+        <mat-label>Data da Faxina</mat-label>
         <input
           matInput
           [matDatepicker]="dp3"
@@ -71,4 +71,5 @@
   </mat-card>
 </div>
 
+{{ novaFaxina | json }}
 </html>

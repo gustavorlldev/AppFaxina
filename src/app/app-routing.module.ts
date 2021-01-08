@@ -13,6 +13,8 @@ const routes: Routes = [
 
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'cadastrar', component: AddFaxinaComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'transaction', component: TransactionComponent},
   {path: 'userprofile', component: UserProfileComponent}
