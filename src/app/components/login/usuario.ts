@@ -1,5 +1,4 @@
-export class Usuario {
+import { AbstractPessoaEntity } from "./pessoa-abstract-entity";
 
-    user: String;
-    password: String;
-}
+export class Usuario extends AbstractPessoaEntity{}
+
