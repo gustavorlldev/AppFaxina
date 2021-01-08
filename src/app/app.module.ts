@@ -20,6 +20,40 @@ import { ContentComponent } from './components/content/content.component';
 import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component';
 import { UserProfileComponent } from './components/userProfile/userProfile.component';
 import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.component';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+} from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { DeleteDialogServiceComponent } from './components/delete-dialog-service/delete-dialog-service.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +67,8 @@ import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.
     AddFaxinaComponent,
     AddFaxineiraComponent,
     ProfileComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DeleteDialogServiceComponent
     ],
 
 
@@ -48,10 +83,15 @@ import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CommonModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  bootstrap: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [AddFaxinaComponent,
+    DeleteDialogServiceComponent,
+    ]
+
 })
 export class AppModule { }

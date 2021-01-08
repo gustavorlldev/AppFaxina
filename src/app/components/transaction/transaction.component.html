@@ -3,7 +3,7 @@
         <mat-tab label="Faxineiras">
                 <div class="container">
                     <div id="button-add">
-                      <a href="http://localhost:4200/cadastrarfaxineira"> <button mat-raised-button color="primary">Criar Anúncio</button></a>
+                       <button mat-raised-button color="primary">Criar Anúncio</button>
                     </div>
                     <div id="input-list">
                         <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
@@ -93,7 +93,7 @@
         <mat-tab label="Serviços">
             <div class="container">
                 <div id="button-add">
-                    <a href="http://localhost:4200/cadastrar"><button mat-raised-button color="primary">Criar Anúncio</button></a>
+                    <button mat-raised-button color="primary" (click)="openDialog()" >Criar Anúncio</button>
                 </div>
                 <div id="input-list">
                     <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">

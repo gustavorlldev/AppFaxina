@@ -3,8 +3,9 @@
 
 
 
-<div class="login-page">
-  <mat-card >
+
+  <div class="login-page">
+    <mat-card >
     <mat-card-title style="text-align: center">Novo Serviço</mat-card-title>
     <br />
 
@@ -59,7 +60,7 @@
 
     <button
     mat-raised-button
-      class="save-button"
+      class="button"
       color="primary"
       (click)="adicionarFaxina()"
     >
@@ -68,6 +69,9 @@
     <ul *ngFor="let item of listaDeFaxina; let i = index">
       <li>{{ item.titulo }}</li>
     </ul>
+    <button mat-raised-button
+    class="button"
+    color="primary" (click)="openDialog()">Cancel</button>
   </mat-card>
 </div>
 
