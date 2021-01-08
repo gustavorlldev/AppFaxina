@@ -43,5 +43,5 @@ export class ProfileComponent implements OnInit {
           this.url = (<FileReader>event.target).result as string;
       }
     }
-  }
+  } 
 }
