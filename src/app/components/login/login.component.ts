@@ -13,7 +13,6 @@ import { AuthService } from "./auth.service";
 
 export class LoginComponent implements OnInit {
   
-  
   constructor(private fb: FormBuilder, private autenticacao: AuthService, private snackBar: SnackbarService, private router: Router){}
 
   //Metodo que instacia os Forms
@@ -31,7 +30,6 @@ export class LoginComponent implements OnInit {
   loading: boolean = false
 
   ngOnInit() {
-
   }
 
   private loginOkNotification(u: Usuario) {
@@ -41,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.snackBar.openSnackBar('Erro')
   }
 
-  //Metodo Pegar Dados do Usuario
+  //Metodo Pegar Dados do Usuario cadastro
   onSubmit(){
     const newUser:Usuario={
       user :this.formulario.value.user,
@@ -49,20 +47,17 @@ export class LoginComponent implements OnInit {
       senha :this.formulario.value.senha
     }
 
-  
     this.autenticacao.register(newUser).subscribe((u) => {
       this.snackBar.openSnackBar('Usuario logado com Sucesso')
-
       this.router.navigate(['/'])
     },
     (err)=>{
       console.log(err);
       this.snackBar.openSnackBar('Algum campo Invalido')
-
       })
     }
 
-
+    //Metodo Login
     onLogin() {
       this.loading = true;
       let email = this.loginForm.value.email;
@@ -73,14 +68,12 @@ export class LoginComponent implements OnInit {
         this.loginOkNotification(u);
         this.router.navigateByUrl('/home');
         this.loading = false
-  
       },
         (err) => {
           this.loginErrorNotNotification(err);
           this.loading = false
       })
     }
-    
   }
     
 
