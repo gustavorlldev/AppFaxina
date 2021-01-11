@@ -24,11 +24,19 @@ export class AddFaxinaComponent implements OnInit {
 
    }
 
-   openDialog(): void {
+   closeDialog(): void {
 
       this.dialog.closeAll();
 
   }
+
+  input = new FormControl ('', [Validators.required]);
+  getErrorMessage(){
+    if (this.input.hasError('required')){
+      return 'Campo Obrigatório';
+    }
+  }
+
 
   ngOnInit() {
   }
