@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
     this.autenticacao.register(newUser).subscribe((u) => {
       this.snackBar.openSnackBar('Usuario logado com Sucesso')
-      this.router.navigate(['/'])
+      this.router.navigate(['/profile'])
     },
     (err)=>{
       console.log(err);
