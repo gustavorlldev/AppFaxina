@@ -1,57 +1,38 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { UserData } from './userData';
+import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { map } from "rxjs/operators";
+import { UserData } from "./userData";
 
-@Injectable({
-  providedIn: 'root'
+@Injectable ({
+    providedIn: 'root'
 })
-export class RegisterService {
+export class UserService {
 
-  private usersCollection: AngularFirestoreCollection<UserData> = this.db.collection(
-    "usuario"
-  );
+    constructor(private _angularFireDatabase: AngularFireDatabase){ }
 
-  constructor(private db: AngularFirestore) {}
-
-  getAll(): Observable<UserData[]> {
-    return this.db
-      .collection<UserData>("usuario")
-      .snapshotChanges()
-      .pipe(
-        map((actions) => {
-          return actions.map((item) => {
-            const data = item.payload.doc.data() as UserData;
-            const id = item.payload.doc.id;
-            return { id, ...data };
-          });
+    insert(user: UserData) {
+        this._angularFireDatabase.list("usuario").push(user)
+        .then((result: any) => {
+            console.log(result.key)
         })
-      );
-  }
+    }
 
-  insert(users: UserData) {
-    return this.usersCollection.add({ ...users });
-  }
+    update(user: UserData, key:string) {
+        this._angularFireDatabase.list("usuario").update(key, user)
+    }
 
-  delete(key: string) {
-    return this.usersCollection.doc(key).delete();
-  }
+    getAll() {
+        return this._angularFireDatabase.list<UserData>('usuario')
+        .snapshotChanges()
+        .pipe(
+            map(changes => {
+                return changes.map(data => ({ key: data.payload.key, ...data.payload.val() }))
+            })
+        )
+    }
 
-  update(object: UserData) {
-    return this.usersCollection.doc(object.id);
-  }
+    delete(key:string) {
+        this._angularFireDatabase.object(`usuario/${key}`).remove
 
-  auth(object: UserData) {
-    return this.usersCollection.ref
-      .where("usuario", "==", object.nome)
-      .where("usuario", "==", object.sobrenome)
-      .where("usuario", "==", object.email)
-      .where("usuario", "==", object.sexo)
-      .where("usuario", "==", object.idade)
-      .where("usuario", "==", object.CPF)
-      .where("usuario", "==", object.whatsApp)
-      .where("usuario", "==", object.fotoDoPerfil);
-  }
-
+    }
 }

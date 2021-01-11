@@ -4,7 +4,7 @@
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
         <mat-tab label="Dados Pessoais">
           <mat-card-content>
-            <form action=""  >
+            <form (ngSubmit)="onSubmit()">
 
               <div class="picture">
                 <label class="hoverable" for="fileInput">
@@ -17,7 +17,7 @@
               </div>
 
               <mat-form-field>
-                <input matInput placeholder="Primeiro Nome"[formControl]="inputs" >
+                <input matInput placeholder="Primeiro Nome"[formControl]="inputs"  >
                 <mat-error>Campo obrigatório</mat-error>
               </mat-form-field>
 
