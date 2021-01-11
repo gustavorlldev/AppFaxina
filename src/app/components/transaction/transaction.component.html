@@ -1,194 +1,105 @@
 <div class="list-services">
-    <mat-tab-group animationDuration="5ms">
-        <mat-tab label="Faxineiras">
-                <div class="container">
-                    <div id="button-add">
-                       <button mat-raised-button color="primary">Criar Anúncio</button>
-                    </div>
-                    <div id="input-list">
-                        <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
-                        <datalist id="sort-list">
-                                <option value="Data recente" onclick="test()">
-                                <option value="Data antiga">
-                                <option value="Preço menor">
-                                <option value="Preço maior">
-                        </datalist>
-                    </div>
-                </div>
-            <ul>
-                <li>
-                    <div class="background-transaction" >
-                        <div id="img-list">
-                            <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                            </a>
-                        </div>
-                        <div class="card-info">
-                            <div id="info-list">
-                                <a href="">
-                                    <p><label>Título:</label>Procuro....</p>
-                                    <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                                    <p><label>Contato:</label> 48 99991010</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h1></h1>
-                </li>
-                <li>
-                  <div class="background-transaction" >
-                      <div id="img-list">
-                          <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                          </a>
-                      </div>
-                      <div class="card-info">
-                          <div id="info-list">
-                              <a href="">
-                                  <p><label>Título:</label>Procuro....</p>
-                                  <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                                  <p><label>Contato:</label> 48 99991010</p>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <h1></h1>
-              </li>
-              <li>
-                <div class="background-transaction" >
-                    <div id="img-list">
-                        <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                        </a>
-                    </div>
-                    <div class="card-info">
-                        <div id="info-list">
-                            <a href="">
-                                <p><label>Título:</label>Procuro....</p>
-                                <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                                <p><label>Contato:</label> 48 99991010</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h1></h1>
-            </li>
-            <li>
-              <div class="background-transaction" >
-                  <div id="img-list">
-                      <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                      </a>
-                  </div>
-                  <div class="card-info">
-                      <div id="info-list">
-                          <a href="">
-                              <p><label>Título:</label>Procuro....</p>
-                              <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                              <p><label>Contato:</label> 48 99991010</p>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <h1></h1>
-          </li>
-            </ul>
-        </mat-tab>
-        <mat-tab label="Serviços">
-            <div class="container">
-                <div id="button-add">
-                    <button mat-raised-button color="primary" (click)="openDialog()" >Criar Anúncio</button>
-                </div>
-                <div id="input-list">
-                    <b>Filtro:</b><input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção">
-                    <datalist id="sort-list">
-                            <option value="Data recente" onclick="test()">
-                            <option value="Data antiga">
-                            <option value="Preço menor">
-                            <option value="Preço maior">
-                    </datalist>
-                </div>
+  <mat-tab-group animationDuration="5ms">
+    <mat-tab label="Faxineiras">
+      <div class="container">
+        <div id="button-add">
+          <button mat-raised-button color="primary">Criar Anúncio</button>
+        </div>
+        <div id="input-list">
+          <b>Filtro:</b>
+          <input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção"/>
+          <datalist id="sort-list">
+            <option value="Data recente" onclick="test()"></option>
+            <option value="Data antiga"></option>
+            <option value="Preço menor"></option>
+            <option value="Preço maior"></option>
+          </datalist>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <div class="background-transaction">
+            <div id="img-list">
+              <a href=""
+                ><img src="assets\img\user.png" width="150" height="150" />
+                <div id="name-list">Roberto Carlos</div>
+              </a>
             </div>
-        <ul>
-            <li>
-              <div class="background-transaction">
-                    <div id="img-list">
-                        <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                        </a>
-                    </div>
-                    <div class="card-info">
-                      <div id="info-list">
-                          <a href="">
-                              <p><label>Título:</label>sdaa</p>
-                              <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                              <p><label>Endereço:</label>das</p>
-                              <p><label>Tamanho da Casa:</label>dasda</p>
-                              <p><label> Data da Faxina:</label>dasdsa</p>
-                          </a>
-                      </div>
-                  </div>
-                </div>
-                <h1></h1>
-            </li>
-            <li>
-              <div class="background-transaction">
-                    <div id="img-list">
-                        <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                        </a>
-                    </div>
-                    <div class="card-info">
-                      <div id="info-list">
-                          <a href="">
-                              <p><label>Título:</label>sdaa</p>
-                              <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                              <p><label>Endereço:</label>das</p>
-                              <p><label>Tamanho da Casa:</label>dasda</p>
-                              <p><label> Data da Faxina:</label>dasdsa</p>
-                          </a>
-                      </div>
-                  </div>
-                </div>
-                <h1></h1>
-            </li>
-            <li>
-              <div class="background-transaction">
-                    <div id="img-list">
-                        <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                        </a>
-                    </div>
-                    <div class="card-info">
-                      <div id="info-list">
-                          <a href="">
-                              <p><label>Título:</label>sdaa</p>
-                              <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                              <p><label>Endereço:</label>das</p>
-                              <p><label>Tamanho da Casa:</label>dasda</p>
-                              <p><label> Data da Faxina:</label>dasdsa</p>
-                          </a>
-                      </div>
-                  </div>
-                </div>
-                <h1></h1>
-            </li>
-            <li>
-              <div class="background-transaction">
-                    <div id="img-list">
-                        <a href=""><img src="assets\img\user.png" width="150"  height="150"/>
-                        </a>
-                    </div>
-                    <div class="card-info">
-                      <div id="info-list">
-                          <a href="">
-                              <p><label>Título:</label>sdaa</p>
-                              <p><label>Descrição:</label>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa</p>
-                              <p><label>Endereço:</label>das</p>
-                              <p><label>Tamanho da Casa:</label>dasda</p>
-                              <p><label> Data da Faxina:</label>dasdsa</p>
-                          </a>
-                      </div>
-                  </div>
-                </div>
-                <h1></h1>
-            </li>
-        </ul>
-        </mat-tab>
-      </mat-tab-group>
+            <div class="card-info">
+              <div id="info-list">
+                <a href="">
+                  <p><label>Título:</label>Procuro....</p>
+                  <p>
+                    <label>Descrição:</label>Lorem ipsum dolor sit amet
+                    consectetur, adipisicing elit.
+                    Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa
+                    dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada
+                    dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa
+                  </p>
+                  <p><label>Localização:</label> Tapera/Florianópolis</p>
+                  <p><label>Sexo:</label> Feminino</p>
+                  <p><label>Contato:</label> 48 99991010</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h1></h1>
+        </li>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Serviços">
+      <div class="container">
+        <div id="button-add">
+          <button mat-raised-button color="primary" (click)="openDialog()">
+            Criar Anúncio
+          </button>
+        </div>
+        <div id="input-list">
+          <b>Filtro:</b
+          ><input
+            list="sort-list"
+            name="Ordenação"
+            id="list"
+            placeholder="Selecione opção"
+          />
+          <datalist id="sort-list">
+            <option value="Data recente" onclick="test()"></option>
+            <option value="Data antiga"></option>
+            <option value="Preço menor"></option>
+            <option value="Preço maior"></option>
+          </datalist>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <div class="background-transaction">
+            <div id="img-list">
+              <a href=""
+                ><img src="assets\img\user.png" width="150" height="150" />
+                <div id="name-list">Roberto Carlos</div>
+              </a>
+            </div>
+            <div class="card-info">
+              <div id="info-list">
+                <a href="">
+                  <p><label>Título:</label>sdaa</p>
+                  <p>
+                    <label>Descrição:</label>Lorem ipsum dolor sit amet
+                    consectetur, adipisicing elit.
+                    Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa
+                    dadasdsadLorem ipsum dolor sit amet consectetur
+                  </p>
+                  <p><label>Localização:</label> Tapera Florianópolis</p>
+                  <p><label>Tamanho da Casa:</label>dasda</p>
+                  <p><label> Data da Faxina:</label>dasdsa</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h1></h1>
+        </li>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
 </div>
-
-
