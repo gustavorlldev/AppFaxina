@@ -38,7 +38,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Tamanho da Casa (em m2)</mat-label>
-        <input matInput [(ngModel)]="novaFaxina.tamanhoCasa" type="text" />
+        <input matInput [(ngModel)]="novaFaxina.tamanhoCasa" type="text" pattern="[0-9]{1,4}" />
       </mat-form-field>
 
 

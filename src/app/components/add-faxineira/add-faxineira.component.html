@@ -15,16 +15,23 @@
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-                <mat-label>Contato:</mat-label>
-                <input matInput [(ngModel)]="novaFaxineira.contato" type="tel" pattern="[0-9]{2} 9 [0-9]{4}-[0-9]{4}" max-length="20"/>
+                <mat-label>Localidade:</mat-label>
+                <input matInput [(ngModel)]="novaFaxineira.Localidade" type="text" max-length="75"/>
             </mat-form-field>
 
-            <button mat-raised-button class="save-button" color="primary" (click)="adicionarFaxineira()">Anunciar</button>
+            <mat-form-field appearance="fill">
+                <mat-label>Contato:</mat-label>
+                <input matInput [(ngModel)]="novaFaxineira.contato"
+                type="tel"
+                pattern="[0-9]{2} 9 [0-9]{4}-[0-9]{4}"
+                max-length="14"/>
+            </mat-form-field>
 
-            <ul *ngFor="let item of listaFaxineira; let i= index">
-                <li>{{ item.titulo }}</li>
-            </ul>
-            {{novaFaxineira | json}}
+            <button mat-raised-button class="button" color="primary" (click)="adicionarFaxineira()">Anunciar</button>
+
+            <button mat-raised-button
+                class="button"
+                color="primary" (click)="closeFaxineira()">Cancel</button>
         </mat-card>
     </div>
 </html>
