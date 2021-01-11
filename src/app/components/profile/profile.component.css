@@ -43,7 +43,7 @@
 img {
     height: 100%;
     width: 100%;
-    border-radius: 50%;
+    
   }
   .hoverable{
     position: relative;
@@ -52,7 +52,7 @@ img {
     height: 130px;
     width: 130px;
     border: 5px solid#5A4BA6;
-    border-radius: 50%;
+    
     margin: 0 auto;
   }
   .hoverable .hover-text{
