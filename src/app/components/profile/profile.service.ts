@@ -49,7 +49,7 @@ export class RegisterService {
       .where("usuario", "==", object.email)
       .where("usuario", "==", object.sexo)
       .where("usuario", "==", object.idade)
-      .where("usuario", "==", object.CPF)
+      .where("usuario", "==", object.cpf)
       .where("usuario", "==", object.whatsApp)
       .where("usuario", "==", object.fotoDoPerfil);
   }
