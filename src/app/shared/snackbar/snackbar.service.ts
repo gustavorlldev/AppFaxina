@@ -7,6 +7,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 export class SnackbarService {
+  open(arg0: string, arg1: string, arg2: { duration: number; verticalPosition: string; }) {
+    throw new Error('Method not implemented.');
+  }
   
   constructor(private snackBar: MatSnackBar) {}
 

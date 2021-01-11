@@ -1,4 +1,3 @@
-import { AuthService } from './../login/auth.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { VERSION, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit {
   layoutGap = '64';
   fixedInViewport = true;
 
-  public constructor(private bpo: BreakpointObserver, authService: AuthService) {}
+  public constructor(private bpo: BreakpointObserver) {}
 
   public ngOnInit(): void {
     const breakpoints = Object.keys(Breakpoints).map(key => Breakpoints[key])

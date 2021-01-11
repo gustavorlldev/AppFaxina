@@ -1,4 +1,3 @@
-import { AuthService } from './components/login/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,13 +10,12 @@ export class AppComponent {
 
   showMenu: boolean = false;
 
-  constructor(private authService: AuthService){
+  constructor(){
 
   }
 
   ngOnInit(){
-    this.authService.showMenuEmitter.subscribe(
-      show => this.showMenu = show
-    );
+
+    
   }
 }

@@ -54,6 +54,8 @@ import {
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { DeleteDialogServiceComponent } from './components/delete-dialog-service/delete-dialog-service.component';
+import { AuthService } from './components/login/auth.service';
+
 
 
 @NgModule({
@@ -89,7 +91,9 @@ import { DeleteDialogServiceComponent } from './components/delete-dialog-service
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   entryComponents: [AddFaxinaComponent,
     DeleteDialogServiceComponent,
     ]

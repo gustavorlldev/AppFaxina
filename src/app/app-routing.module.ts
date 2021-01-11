@@ -1,5 +1,4 @@
 import { TransactionComponent } from './components/transaction/transaction.component';
-import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';

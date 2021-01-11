@@ -1,71 +1,86 @@
-import { LoginService } from "./login.service";
+import { Router } from '@angular/router';
+import { SnackbarService } from './../../shared/snackbar/snackbar.service';
 import { Usuario } from "./usuario";
-import { AuthService } from "./auth.service";
 import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "./auth.service";
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
+
 export class LoginComponent implements OnInit {
-  public usuario: Usuario = new Usuario();
+  
+  
+  constructor(private fb: FormBuilder, private autenticacao: AuthService, private snackBar: SnackbarService, private router: Router){}
 
-  constructor(
-    private authService: AuthService,
-    public dialog: MatDialog,
-    private loginService: LoginService
-  ) {}
+  //Metodo que instacia os Forms
+  formulario: FormGroup = this.fb.group({
+    'user': ['', [Validators.required]],
+    'email': ['',[Validators.required, Validators.email]],
+    'senha': ['',[Validators.required, Validators.minLength(6)]]
+  })
 
-  buscarTodosUsuarios(){
-    this.loginService.getAll().subscribe((sucess) => {
-      console.log('Array Abaixo Informando todos os Usuários Cadastrados');
-      console.log(sucess);
-    });
-  }  
+  loginForm: FormGroup = this.fb.group({
+    'email': ['', [Validators.required, Validators.email]],
+    'senha': ['', [Validators.required, Validators.minLength(6)]]
+  })
 
-  buscarUsuarioAtravesDeLoginESenha(){
-    //Abaixo Estou preenchendo HardCode já o seu Model pois estou chamando
-    // Já direto no OnInit, Somente para deixar a função aqui já pronta, 
-    // Amanhã você pode Montar sua Lógica de Login.
-    // Lembrando de Salvar uma key no localStorage para auxiliar no guarda de rota
-    // afim do mesmo verificar se o usuário está autenticado ou não.
-    this.usuario.user = "teste";
-    this.usuario.password = "teste";
-    
-    this.loginService
-      .auth(this.usuario)
-      .get()
-      .then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          console.log(doc.id, " => ", doc.data());
-        });
-      })
-      .catch(function (error) {
-        console.log("Error getting documents: ", error);
-      });
-
-  }
-
-  inserirUsuario(){
-    this.usuario.user = "Gustavo";
-    this.usuario.password = "Exemplo";
-
-    this.loginService.insert(this.usuario)
-    .then(sucess => {console.log('Usuário Salvo Com Sucesso.')}),
-          error => {console.log(`Ocorreu algum erro ao Tentar Salvar: ${error}`)
-  }
-
-  }
+  loading: boolean = false
 
   ngOnInit() {
-    this.buscarTodosUsuarios();
-    this.buscarUsuarioAtravesDeLoginESenha();
-    this.inserirUsuario();
+
   }
 
-  login() {
-    this.authService.login(this.usuario);
+  private loginOkNotification(u: Usuario) {
+    this.snackBar.openSnackBar('Bem vindo ao AppFaxina')
   }
-}
+  private loginErrorNotNotification(err) {
+    this.snackBar.openSnackBar('Erro')
+  }
+
+  //Metodo Pegar Dados do Usuario
+  onSubmit(){
+    const newUser:Usuario={
+      user :this.formulario.value.user,
+      email :this.formulario.value.email,
+      senha :this.formulario.value.senha
+    }
+
+  
+    this.autenticacao.register(newUser).subscribe((u) => {
+      this.snackBar.openSnackBar('Usuario logado com Sucesso')
+
+      this.router.navigate(['/'])
+    },
+    (err)=>{
+      console.log(err);
+      this.snackBar.openSnackBar('Algum campo Invalido')
+
+      })
+    }
+
+
+    onLogin() {
+      this.loading = true;
+      let email = this.loginForm.value.email;
+      let password = this.loginForm.value.senha;
+      this.autenticacao.login(
+        email,password
+      ).subscribe((u) => {
+        this.loginOkNotification(u);
+        this.router.navigateByUrl('/home');
+        this.loading = false
+  
+      },
+        (err) => {
+          this.loginErrorNotNotification(err);
+          this.loading = false
+      })
+    }
+    
+  }
+    
+

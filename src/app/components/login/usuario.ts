@@ -1,4 +1,8 @@
-import { AbstractPessoaEntity } from "./pessoa-abstract-entity";
 
-export class Usuario extends AbstractPessoaEntity{}
+export class Usuario {
+    id?: string
+    user: string
+    senha: string
+    email: string
+}
 

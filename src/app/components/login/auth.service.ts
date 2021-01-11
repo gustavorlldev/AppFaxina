@@ -1,47 +1,35 @@
-import { SnackbarService } from './../../shared/snackbar/snackbar.service';
-import { Usuario } from './usuario';
-import { EventEmitter, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Usuario } from './usuario'
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'
+import { from, Observable, throwError, of } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Injectable } from '@angular/core';
+import firebase from 'firebase/app';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-
 export class AuthService {
 
-  
-  private userAuth: boolean = false;
-  
-    showMenuEmitter = new EventEmitter<boolean>();
- 
-  constructor(private router: Router, private snackBarService: SnackbarService) {
-  
-   }
-  
-  login(usuario: Usuario){
+    private userCollection: AngularFirestoreCollection<Usuario> = this.afs.collection('usuario')
+    constructor(private afs: AngularFirestore,
+                private afAuth: AngularFireAuth) {}
 
-    if(usuario.user === 'usuario@email.com' &&
-    usuario.password === '123456') {
-      this.userAuth = true;
-      this.showMenuEmitter.emit(true);
-
-      this.snackBarService.openSnackBar('Usuario logado com Sucesso')
-
-      this.router.navigate(['home'])
-
-    } else {
-
-      this.userAuth = false;
-
-      this.snackBarService.openSnackBar('Credenciais inválidas')
-
-      this.showMenuEmitter.emit(false);
+    register(user: Usuario): Observable<boolean> {
+        return from(this.afAuth.createUserWithEmailAndPassword(user.email, user.senha))
+            .pipe(switchMap((u: firebase.auth.UserCredential) =>
+                this.userCollection.doc(u.user.uid).set({ ...user, id: u.user.uid }).then(() => true)
+            ),
+                catchError((error) => throwError(error))
+            )
     }
-  }
 
-  AuthUser(){
-    return this.userAuth;
-  }
-
-
+    login(email: string, password: string): Observable<Usuario> {
+        return from(this.afAuth.signInWithEmailAndPassword(email, password))
+            .pipe(
+                switchMap((u: firebase.auth.UserCredential) => this.userCollection.doc<Usuario>(u.user.uid).valueChanges()),
+                catchError(() => throwError('Credenciais inválidas')
+                )
+            )
+    }
 }
