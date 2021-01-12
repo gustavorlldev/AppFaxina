@@ -4,8 +4,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { GenericValidator } from './cpfValidator';
 import { UserService } from "./profile.service";
-import { UserData } from './userData';
+import { Usuario } from '../login/usuario';
 import { UserDataService } from './profile-data.service';
+import { AuthService } from "../login/auth.service";
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ import { UserDataService } from './profile-data.service';
 })
 export class ProfileComponent implements OnInit {
 
-  user: UserData;
+  user: Usuario;
   key: string = '';
   form: FormGroup;
 
@@ -25,18 +26,19 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    this.user = new UserData();
+    this.user = new Usuario();
     this._userDataService.currentUser.subscribe(data => {
       if( data.user && data.key) {
-        this.user = new UserData();
+        this.user = new Usuario();
         this.user.nome = data.user.nome;
         this.user.sobrenome = data.user.sobrenome;
-        this.user.email = data.user.email;
         this.user.sexo = data.user.sexo;
         this.user.idade = data.user.idade;
         this.user.cpf = data.user.cpf;
         this.user.whatsApp = data.user.whatsApp;
+        this.user.fotoDoPerfil = data.user.fotoDoPerfil;
         this.key = data.key;
+        debugger
       }
     })
 
@@ -51,30 +53,23 @@ export class ProfileComponent implements OnInit {
     } else {
       this._userService.insert(this.user);
     }
-    this.user = new UserData();
+    this.user = new Usuario();
+    debugger;
     this.key = null;
     this.router.navigate(['/home']);
+    console.log(this.user)
   }
 
-  formulario: FormGroup = this.formBuilder.group({
+  forms: FormGroup = this.formBuilder.group({
     'name': ['', [Validators.required]],
     'lastname': ['',[Validators.required]],
-    'email': ['',[Validators.required, Validators.email]],
     'gender': ['',[Validators.required]],
     'age': ['', [Validators.required]],
     'cpf': ['',[Validators.required]],
     'whatsapp': ['',[Validators.required]]
   })
-
-  email = new FormControl('', [Validators.required, Validators.email]);
-  inputs = new FormControl('', [Validators.required]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'Campo obrigatório';
-    }
-    return this.email.hasError('email') ? 'E-mail inválido' : '';
-  }
+ 
+  inputs = new FormControl('', [Validators.required])
 
   url = '../../assets/img/user.png';
 

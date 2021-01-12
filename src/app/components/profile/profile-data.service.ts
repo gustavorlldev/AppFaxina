@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserData } from './userData';
+import { Usuario } from '../login/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class UserDataService {
   private userSource = new BehaviorSubject ({ user: null, key:''});
   currentUser = this.userSource.asObservable();
 
-  collectUser(user: UserData, key: string){
+  collectUser(user: Usuario, key: string){
     this.userSource.next({user: user, key: key});
   }
 }
