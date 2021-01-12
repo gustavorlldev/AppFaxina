@@ -1,3 +1,4 @@
+import { AddFaxineiraService } from './components/add-faxineira/add-faxineira.service';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
@@ -92,7 +93,8 @@ import { AuthService } from './components/login/auth.service';
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent],
   providers: [
-    AuthService
+    AuthService,
+    AddFaxineiraService
   ],
   entryComponents: [AddFaxinaComponent,
     DeleteDialogServiceComponent,

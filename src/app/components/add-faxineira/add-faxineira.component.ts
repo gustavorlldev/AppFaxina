@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Faxineira } from 'src/app/model/faxineira-model'
+import { Faxineira } from 'src/app/model/faxineira-model';
+import { AngularFireModule } from '@angular/fire';
+import { AddFaxineiraService } from './add-faxineira.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-faxineira',
@@ -8,22 +12,35 @@ import { Faxineira } from 'src/app/model/faxineira-model'
   styleUrls: ['./add-faxineira.component.css']
 })
 export class AddFaxineiraComponent implements OnInit {
-  listaFaxineira: Faxineira[] = [];
   novaFaxineira: Faxineira;
   wasFormChanged = false;
-
-  adicionarFaxineira() {
-    this.listaFaxineira.push(this.novaFaxineira);
-  }
-
-  constructor(public dialog: MatDialog) {
-    this.novaFaxineira = new Faxineira();
+  key: string = '';
+  
+  constructor(public dialog: MatDialog, private addFaxineiraService: AddFaxineiraService) {
   };
-
+  
   closeFaxineira(): void {
     this.dialog.closeAll();
   }
-
+  
   ngOnInit() {
+    this.novaFaxineira = new Faxineira();
   }
+
+  adicionarFaxineira() {
+    if(this.key) {
+    } else {
+      let addFaxineira = {...this.novaFaxineira};
+      this.addFaxineiraService.insert(addFaxineira);
+    }
+    this.novaFaxineira = new Faxineira();
+  }
+
+  input = new FormControl('', [Validators.required]);
+  getErrorMessage(){
+    if(this.input.hasError('required')){
+      return 'Campo obrigatório';
+    };
+  };
+
 }
