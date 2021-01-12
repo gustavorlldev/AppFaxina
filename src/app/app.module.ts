@@ -96,6 +96,7 @@ import { AuthService } from './components/login/auth.service';
   ],
   entryComponents: [AddFaxinaComponent,
     DeleteDialogServiceComponent,
+    AddFaxineiraComponent,
     ]
 
 })
