@@ -34,9 +34,10 @@ export class AddFaxineiraComponent implements OnInit {
       this.addFaxineiraService.insert(addFaxineira);
     }
     this.novaFaxineira = new Faxineira();
+    this.dialog.closeAll();
   }
 
-  input = new FormControl('', [Validators.required]);
+  input = new FormControl(null, [Validators.required]);
   getErrorMessage(){
     if(this.input.hasError('required')){
       return 'Campo obrigatório';
