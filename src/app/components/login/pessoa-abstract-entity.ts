@@ -10,4 +10,5 @@ export abstract class AbstractPessoaEntity {
   cpf?: string;
   whatsApp?: string;
   fotoDoPerfil?: string;
+  endereco?: string;
 }

@@ -13,58 +13,62 @@
                     <div class="background"></div>
                 </label>
                 <br>
-                <input id="fileInput" required type='file' (change)="onSelectFile($event)" accept="image/*">
+                <input id="fileInput" required type='file' (change)="onSelectFile($event)" [formControl] = "inputs" accept="image/*" [(ngModel)] = "user.fotoDoPerfil" >
               </div>
 
-              <mat-form-field>
-                <input matInput placeholder="Primeiro Nome"[formControl]="inputs"  >
-                <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
-
-              <mat-form-field>
-                <input matInput placeholder="Sobrenome" [formControl]="inputs">
-                <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field> 
-
-                <mat-form-field >
-                  <mat-label>E-mail</mat-label>
-                  <input matInput placeholder="exemplo@exemplo.com" [formControl]="email" required>
-                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
-            
-              
-              <mat-form-field>
-                <mat-label>Sexo</mat-label>
-                    <mat-select [formControl]="inputs">
-                        <mat-option value="option">Masculino</mat-option>
-                        <mat-option value="option">Feminino</mat-option>
-                    </mat-select>
+              <div class="inputs-card">
+                <mat-form-field>
+                    <input matInput placeholder="Primeiro Nome"[formControl]="inputs" [(ngModel)] = "user.nome">
                     <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
+                  </mat-form-field>
+    
+                  <mat-form-field>
+                    <input matInput placeholder="Sobrenome" [formControl]="inputs" [(ngModel)] = "user.sobrenome">
+                    <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field> 
+    
+                    
+                  
+                  <mat-form-field>
+                    <mat-label>Sexo</mat-label>
+                        <mat-select [formControl]="inputs" [(ngModel)] = "user.sexo">
+                            <mat-option value="option">Masculino</mat-option>
+                            <mat-option value="option">Feminino</mat-option>
+                        </mat-select>
+                        <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field>
+                    <input matInput type="number" placeholder="Idade" [formControl]="inputs" name="age" [(ngModel)] = "user.idade" >
+                    <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field 
+                  [formGroup]="form">
+                    <mat-label>CPF</mat-label>
+                    <input matInput placeholder="12345678910" required formControlName="cpf" [(ngModel)] = "user.cpf" >
+                    <mat-error><div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
+                        O CPF não é válido.
+                      </div></mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field>
+                    <mat-label>Whatsapp</mat-label>
+                    <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" [formControl]="inputs" name="Whatsapp" [(ngModel)] = "user.whatsApp">
+                    <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
 
-              <mat-form-field>
-                <input matInput type="number" placeholder="Idade" [formControl]="inputs" name="age" >
-                <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
-
-              <mat-form-field 
-              [formGroup]="form">
-                <mat-label>CPF</mat-label>
-                <input matInput placeholder="12345678910" required formControlName="cpf" >
-                <mat-error><div *ngIf="form.get('cpf').getError('cpfNotValid')"> 
-                    O CPF não é válido.
-                  </div></mat-error>
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>Whatsapp</mat-label>
-                <input matInput type="tel" placeholder="(xx) 9xxxx-xxxx" [formControl]="inputs" name="Whatsapp">
-                <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
-
-              <button mat-raised-button color="primary" class="complete-button">
-                Completar Cadastro
-              </button>
+                  <mat-form-field>
+                    <mat-label>Endereço Completo</mat-label>
+                    <input matInput placeholder="Rua, Nº - Bairro - Cidade/UF" [formControl]="inputs" name="address" [(ngModel)] = "user.endereco">
+                    <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
+    
+                  <button mat-raised-button color="primary" class="complete-button">
+                    Completar Cadastro
+                  </button>
+              </div>
+              
 
             </form>
           </mat-card-content>

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "@angular/fire/database";
 import { map } from "rxjs/operators";
-import { UserData } from "./userData";
+import { Usuario } from "../login/usuario";
 
 @Injectable ({
     providedIn: 'root'
@@ -10,19 +10,22 @@ export class UserService {
 
     constructor(private _angularFireDatabase: AngularFireDatabase){ }
 
-    insert(user: UserData) {
+    insert(user: Usuario) {
         this._angularFireDatabase.list("usuario").push(user)
         .then((result: any) => {
             console.log(result.key)
         })
     }
 
-    update(user: UserData, key:string) {
+    update(user: Usuario, key:string) {
         this._angularFireDatabase.list("usuario").update(key, user)
+            .catch((error:any) => {
+                console.error(error);
+            })
     }
 
     getAll() {
-        return this._angularFireDatabase.list<UserData>('usuario')
+        return this._angularFireDatabase.list<Usuario>('usuario')
         .snapshotChanges()
         .pipe(
             map(changes => {
