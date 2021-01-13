@@ -1,3 +1,4 @@
+import { AddFaxinaService } from './add-faxina.service';
 import { DeleteDialogServiceComponent } from 'src/app/components/delete-dialog-service/delete-dialog-service.component';
 import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
 import { Faxina } from 'src/app/model/faxina-model';
@@ -13,21 +14,20 @@ export class AddFaxinaComponent implements OnInit {
   listaDeFaxina: Faxina[] = [];
   novaFaxina: Faxina;
   wasFormChanged = false;
+  key: string = '';
 
-  adicionarFaxina() {
-    this.listaDeFaxina.push(this.novaFaxina);
-  }
 
-  constructor(public dialog: MatDialog) {
-
-    this.novaFaxina = new Faxina();
-
+  constructor(public dialog: MatDialog, private AddFaxinaService: AddFaxinaService) {
    }
 
-   closeDialog(): void {
-
-      this.dialog.closeAll();
-
+   adicionarFaxina() {
+    if(this.key) {
+    } else {
+      let addFaxina = {...this.novaFaxina};
+      this.AddFaxinaService.insert(addFaxina);
+    }
+    this.novaFaxina = new Faxina();
+    this.dialog.closeAll();
   }
 
   input = new FormControl ('', [Validators.required]);
@@ -37,8 +37,15 @@ export class AddFaxinaComponent implements OnInit {
     }
   }
 
+  closeDialog(): void {
+
+    this.dialog.closeAll();
+
+}
+
 
   ngOnInit() {
+    this.novaFaxina = new Faxina();
   }
 
 }
