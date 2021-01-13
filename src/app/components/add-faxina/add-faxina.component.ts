@@ -4,6 +4,8 @@ import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
 import { Faxina } from 'src/app/model/faxina-model';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert';
+
 
 @Component({
   selector: 'app-add-faxina',
@@ -22,12 +24,29 @@ export class AddFaxinaComponent implements OnInit {
 
    adicionarFaxina() {
     if(this.key) {
+      {
+        swal(
+          {​​
+          title: 'Erro!',
+          text: 'Por Favor Complete os Campos Obrigatórios!',
+          icon: 'error',
+          }​​)
+      }
     } else {
       let addFaxina = {...this.novaFaxina};
       this.AddFaxinaService.insert(addFaxina);
     }
     this.novaFaxina = new Faxina();
     this.dialog.closeAll();
+    swal(
+      {​​
+      title: 'Parabens!',
+      text: 'Anúncio Publicado com Sucesso!',
+      icon: 'success',
+      }​​)
+
+
+
   }
 
   input = new FormControl ('', [Validators.required]);
