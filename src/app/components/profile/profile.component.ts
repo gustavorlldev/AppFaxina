@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { Component, OnInit, Input, InjectionToken } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -22,7 +23,8 @@ export class ProfileComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, 
               private _userService: UserService, 
               private _userDataService: UserDataService,
-              private router: Router) {}
+              private router: Router,
+              private loginService: LoginService) {}
 
   ngOnInit() {
 
@@ -50,6 +52,7 @@ export class ProfileComponent implements OnInit {
   onSubmit() {
     if(this.key) {
       this._userService.update(this.user, this.key);
+      this.loginService.updateTeste(this.key);
     } else {
       this._userService.insert(this.user);
     }

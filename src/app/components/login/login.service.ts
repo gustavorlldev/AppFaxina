@@ -44,6 +44,10 @@ export class LoginService {
     return this.usersCollection.doc(object.id);
   }
 
+  updateTeste(key: string) {
+    return this.usersCollection.doc(key);
+  }
+
   auth(object: Usuario) {
     return this.usersCollection.ref
       .where("usuario", "==", object.user)
