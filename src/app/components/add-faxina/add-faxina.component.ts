@@ -16,6 +16,7 @@ export class AddFaxinaComponent implements OnInit {
 
   adicionarFaxina() {
     this.listaDeFaxina.push(this.novaFaxina);
+    this.dialog.closeAll();
   }
 
   constructor(public dialog: MatDialog) {

@@ -96,6 +96,7 @@ p > label {
 a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 a:hover {
@@ -128,7 +129,6 @@ section {
 
 input {
   height: 17px;
-  border: 1.5px solid #7080e9;
   border-radius: 2px;
   outline-color :#7080e9;
   text-align: center;
@@ -136,7 +136,6 @@ input {
 
 input:hover, input::selection, input:active {
   height: 17px;
-  border: 1.5px solid #7080e9;
   border-radius: 2px;
   outline-color :#7080e9;
 }
