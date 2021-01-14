@@ -9,11 +9,11 @@ export class FaxineiraPipe implements PipeTransform {
 
   transform(faxineiraList: any, searchWord: string): any {
 
-        if (!faxineiraList){
+        if (!faxineiraList) {
           return [];
         }
 
-        if(!searchWord){
+        if(!searchWord) {
           return faxineiraList;
         }
 

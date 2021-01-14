@@ -3,10 +3,8 @@
     <mat-tab label="Faxineiras">
       <div class="container">
         <div id="button-add">
-          <button mat-raised-button color="primary" (click)="openFaxineira()">Criar Anúncio</button>
+          <button id="criar-anuncio"mat-raised-button color="primary" (click)="openFaxineira()">Criar Anúncio</button>
         </div>
-        <div id="input-list">
-          <b>Filtro:</b>
           <div id="input-list">
             <mat-form-field id="search-field">
               <mat-label>Pesquise aqui</mat-label>
@@ -16,7 +14,7 @@
             </mat-form-field>
           </div>
         </div>
-      </div>
+        <hr>
       <ul>
         <li *ngFor="let faxineira of faxineira | async | faxineiraFilter:searchFaxina">
           <div class="background-transaction" >
@@ -50,8 +48,6 @@
             Criar Anúncio
           </button>
         </div>
-        <div id="input-list">
-          <b>Filtro:</b>
           <div id="input-list">
             <mat-form-field id="search-field">
               <mat-label>Pesquise aqui</mat-label>
@@ -60,8 +56,8 @@
               <mat-hint>Ex: Bairro</mat-hint>
             </mat-form-field>
           </div>
-        </div>
       </div>
+      <hr>
       <ul>
         <li *ngFor="let faxina of faxina | async | faxinaFilter:searchFaxina">
           <div class="background-transaction">
