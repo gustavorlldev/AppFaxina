@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: "AIzaSyApMpC8PIMxk1n53OrIeQcgqh5kGjUUDgc",
-    authDomain: "becaangular-everis.firebaseapp.com",
-    projectId: "becaangular-everis",
-    storageBucket: "becaangular-everis.appspot.com",
-    messagingSenderId: "262606839047",
-    appId: "1:262606839047:web:9ccf1c383d5002ea32b9a2",
-    measurementId: "G-ENDV45DE3G"
+    apiKey: "AIzaSyCyMhIjraXQvqYejWJu6PYc1Hh5__Zk4K0",
+    authDomain: "myy-projectt.firebaseapp.com",
+    databaseURL: "https://myy-projectt-default-rtdb.firebaseio.com",
+    projectId: "myy-projectt",
+    storageBucket: "myy-projectt.appspot.com",
+    messagingSenderId: "493187295561",
+    appId: "1:493187295561:web:ed047ded260ff6f6e69298"
   }
 };

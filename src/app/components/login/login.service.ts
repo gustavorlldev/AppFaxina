@@ -6,6 +6,7 @@ import {
   AngularFirestoreCollection,
 } from "@angular/fire/firestore";
 import { map } from "rxjs/operators";
+import firebase from 'firebase/app'
 
 @Injectable({
   providedIn: "root",
