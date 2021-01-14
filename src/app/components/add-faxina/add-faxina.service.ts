@@ -3,8 +3,6 @@ import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "@angular/fire/database";
 import { map } from "rxjs/operators";
 import { Usuario } from "../login/usuario";
-
-
 @Injectable ({
     providedIn: 'root'
 })

@@ -16,7 +16,6 @@
                     <input matInput [(ngModel)]="novaFaxineira.descricao" type="text" max-length="300" [formControl]="input" name="descricao"/>
                     <mat-error>{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
-
                 <mat-form-field appearance="fill">
                     <mat-label>Contato:</mat-label>
                     <input matInput [(ngModel)]="novaFaxineira.contato"
@@ -26,13 +25,11 @@
                     max-length="14" name="contato"/>
                     <mat-error>{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
-
                 <mat-form-field appearance="fill">
                     <mat-label>Localidade:</mat-label>
                     <input matInput [(ngModel)]="novaFaxineira.localidade" type="text" max-length="75" [formControl]="input" name="localidade"/>
                     <mat-error>{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
-
 
                 <button mat-raised-button class="button" type="submit" color="primary">Anunciar</button>
 
