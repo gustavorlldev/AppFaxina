@@ -96,6 +96,7 @@ p > label {
 a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 a:hover {
@@ -128,7 +129,6 @@ section {
 
 input {
   height: 17px;
-  border: 1.5px solid #7080e9;
   border-radius: 2px;
   outline-color :#7080e9;
   text-align: center;
@@ -136,7 +136,6 @@ input {
 
 input:hover, input::selection, input:active {
   height: 17px;
-  border: 1.5px solid #7080e9;
   border-radius: 2px;
   outline-color :#7080e9;
 }
@@ -147,4 +146,30 @@ input:hover, input::selection, input:active {
   color: black;
   font-size: 11px;
 }
+
+#button-add {
+  margin-left: 5%;
+  margin-bottom: 1%;
+padding-bottom: 0%;
+margin-top: 6%;
+}
+
+#input-list {
+margin-right: 5%;
+padding-top: 0;
+}
+
+#search-field {
+margin-top: 0px;
+}
+
+hr {
+  margin:0%;
+}
+
+.container { 
+  margin: 0%;
+  margin-bottom: 0px;
+}
+
 

@@ -3,43 +3,36 @@
     <mat-tab label="Faxineiras">
       <div class="container">
         <div id="button-add">
-          <button mat-raised-button color="primary" (click)="openFaxineira()">Criar Anúncio</button>
+          <button id="criar-anuncio"mat-raised-button color="primary" (click)="openFaxineira()">Criar Anúncio</button>
         </div>
-        <div id="input-list">
-          <b>Filtro:</b>
-          <input list="sort-list" name="Ordenação" id="list" placeholder="Selecione opção"/>
-          <datalist id="sort-list">
-            <option value="Data recente" onclick="test()"></option>
-            <option value="Data antiga"></option>
-            <option value="Preço menor"></option>
-            <option value="Preço maior"></option>
-          </datalist>
+          <div id="input-list">
+            <mat-form-field id="search-field">
+              <mat-label>Pesquise aqui</mat-label>
+              <input matInput [(ngModel)]="searchFaxina" #input>
+              <mat-icon matSuffix>search</mat-icon>
+              <mat-hint>Ex: Bairro</mat-hint>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
+        <hr>
       <ul>
-        <li>
-          <div class="background-transaction">
+        <li *ngFor="let faxineira of faxineira | async | faxineiraFilter:searchFaxina">
+          <div class="background-transaction" >
             <div id="img-list">
-              <a href=""
-                ><img src="assets\img\user.png" width="150" height="150" />
-                <div id="name-list">Roberto Carlos</div>
+              <a href="link pro userprofile do anunciante"
+                ><img src="" alt="assets\img\user.png" width="150" height="150" /><!-- falta finalização do profile -->
+                <div id="name-list">{{ faxineira.nome }} </div> <!-- falta finalização do profile -->
               </a>
             </div>
             <div class="card-info">
               <div id="info-list">
-                <a href="">
-                  <p><label>Título:</label>Procuro....</p>
-                  <p>
-                    <label>Descrição:</label>Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit.
-                    Nihil,aacorporisharumNihileiustempasdasdsadadadadadadsadadsaasdsasdasdadadassa
-                    dadasdsadLorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Nihil, corporis harum. Nihileiustempdasdasdsadadada
-                    dadadsadadsaasdsasdasdadadassadadasdsadaaaaaa
-                  </p>
-                  <p><label>Localização:</label> Tapera/Florianópolis</p>
-                  <p><label>Sexo:</label> Feminino</p>
-                  <p><label>Contato:</label> 48 99991010</p>
+                <a href="link pro userprofile do anunciante">
+                  <!-- falta finalização do profile -->
+                  <p><label>Título:</label> {{ faxineira.titulo }}</p>
+                  <p><label>Descrição:</label> {{ faxineira.descricao }}</p>
+                  <p><label>Localização:</label> {{ faxineira.localidade }}</p>
+                  <p><label>Sexo:</label> {{ faxineira.sexo }} </p><!-- falta finalização do profile -->
+                  <p><label>Contato:</label> {{ faxineira.contato }}</p>
                 </a>
               </div>
             </div>
@@ -55,41 +48,34 @@
             Criar Anúncio
           </button>
         </div>
-        <div id="input-list">
-          <b>Filtro:</b
-          ><input
-            list="sort-list"
-            name="Ordenação"
-            id="list"
-            placeholder="Selecione opção"
-          />
-          <datalist id="sort-list">
-            <option value="Data recente" onclick="test()"></option>
-            <option value="Data antiga"></option>
-            <option value="Preço menor"></option>
-            <option value="Preço maior"></option>
-          </datalist>
-        </div>
+          <div id="input-list">
+            <mat-form-field id="search-field">
+              <mat-label>Pesquise aqui</mat-label>
+              <input matInput [(ngModel)]="searchFaxina" #input>
+              <mat-icon matSuffix>search</mat-icon>
+              <mat-hint>Ex: Bairro</mat-hint>
+            </mat-form-field>
+          </div>
       </div>
+      <hr>
       <ul>
-        <li>
+        <li *ngFor="let faxina of faxina | async | faxinaFilter:searchFaxina">
           <div class="background-transaction">
             <div id="img-list">
-              <a href=""
-                ><img src="assets\img\user.png" width="150" height="150" />
-                <div id="name-list">Roberto Carlos</div>
+              <a href="link pro userprofile do anunciante"
+                ><img src="" alt="assets\img\user.png" width="150" height="150" /><!-- falta finalização do profile -->
+                <div id="name-list"> {{ faxina.nome }} </div><!-- falta finalização do profile -->
               </a>
             </div>
             <div class="card-info">
               <div id="info-list">
-                <a href="">
-                  <p><label>Título:</label> sdaa</p>
-                  <p>
-                    <label>Descrição:</label> Lorem ipsum dolor sit amet a da
-                  </p>
-                  <p><label>Localização:</label> Tapera Florianópolis</p>
-                  <p><label>Tamanho da Casa:</label> dasda</p>
-                  <p><label> Data da Faxina:</label> dasdsa</p>
+                <a href="link pro userprofile do anunciante"><!-- falta finalização do profile -->
+                  <p><label>Título:</label> {{ faxina.titulo }}</p>
+                  <p><label>Descrição:</label> {{ faxina.descricao }}</p>
+                  <p><label>Localização:</label> {{ faxina.end }}</p>
+                  <p><label>Tamanho da Casa:</label> {{ faxina.tamanhoCasa }}</p>
+                  <p><label> Data da Faxina:</label> {{ faxina.dataFaxina }}</p>
+                  <p><label>Contato:</label> {{ faxina.contato }}</p>
                 </a>
               </div>
             </div>

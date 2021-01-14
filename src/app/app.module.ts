@@ -22,6 +22,8 @@ import { AddFaxinaComponent } from './components/add-faxina/add-faxina.component
 import { UserProfileComponent } from './components/userProfile/userProfile.component';
 import { NgxDropzoneModule } from 'ngx-dropzone'
 import { AddFaxineiraComponent } from './components/add-faxineira/add-faxineira.component';
+import { FaxinaPipe } from './filters/faxina.pipe';
+import { FaxineiraPipe } from './filters/faxineira.pipe';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -72,7 +74,9 @@ import { AuthService } from './components/login/auth.service';
     AddFaxineiraComponent,
     ProfileComponent,
     UserProfileComponent,
-    DeleteDialogServiceComponent
+    DeleteDialogServiceComponent,
+    FaxinaPipe,
+    FaxineiraPipe
     ],
 
 
@@ -93,8 +97,7 @@ import { AuthService } from './components/login/auth.service';
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent],
   providers: [
-    AuthService,
-    AddFaxineiraService
+    AuthService
   ],
   entryComponents: [AddFaxinaComponent,
     DeleteDialogServiceComponent,
