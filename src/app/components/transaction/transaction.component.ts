@@ -27,17 +27,18 @@ export class TransactionComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddFaxinaComponent,{
-      width: '640px',disableClose: true
+      width: '640px', disableClose: true
   });
   }
   openFaxineira(): void {
     const faxineiraRef = this.dialog.open(AddFaxineiraComponent,{
-      width: '640px',disableClose: true
+      width: '640px', disableClose: true
   });
   }
   ngOnInit() {
     this.faxineira = this.addFaxineiraService.getAll();
     this.faxina = this.addFaxinaService.getAll();
   }
+  
 
 }
